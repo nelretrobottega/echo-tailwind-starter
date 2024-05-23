@@ -9,6 +9,7 @@ import (
 type Product struct {
 	Title       string
 	Description string
+	ImgURL      string
 }
 
 func IndexHandler(c echo.Context) error {
@@ -16,8 +17,16 @@ func IndexHandler(c echo.Context) error {
 
 	data["Name"] = "World"
 	data["Products"] = []Product{
-		{Title: "Shoe 1", Description: "Very good!"},
-		{Title: "Shoe 2", Description: "Very good too!"},
+		{
+			Title:       "Shoe 1",
+			Description: "Very good!",
+			ImgURL:      "/static/img/1.webp",
+		},
+		{
+			Title:       "Shoe 2",
+			Description: "Very good too!",
+			ImgURL:      "/static/img/2.webp",
+		},
 	}
 
 	return c.Render(http.StatusOK, "index.html", data)
