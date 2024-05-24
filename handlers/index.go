@@ -20,12 +20,12 @@ func IndexHandler(c echo.Context) error {
 		{
 			Title:       "Shoe 1",
 			Description: "Very good!",
-			ImgURL:      "/static/img/1.webp",
+			ImgURL:      "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
 		},
 		{
 			Title:       "Shoe 2",
 			Description: "Very good too!",
-			ImgURL:      "/static/img/2.webp",
+			ImgURL:      "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
 		},
 	}
 
