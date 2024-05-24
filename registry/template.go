@@ -15,16 +15,16 @@ type TemplateRegistry struct {
 }
 
 func NewTemplateRegistry(root string) *TemplateRegistry {
-	tr := &TemplateRegistry{}
+	tr := &TemplateRegistry{
+		templates: make(map[string]*template.Template),
+	}
 	tr.ParseTemplates(root)
 
 	return tr
 }
 
 func (t *TemplateRegistry) ParseTemplates(root string) error {
-	t.templates = make(map[string]*template.Template)
-
-	err := filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
+	return filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
 		if d.IsDir() {
 			return nil
 		}
@@ -32,8 +32,6 @@ func (t *TemplateRegistry) ParseTemplates(root string) error {
 		t.templates[d.Name()] = template.Must(template.ParseFiles(path, "views/base.html"))
 		return nil
 	})
-
-	return err
 }
 
 func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c echo.Context) error {

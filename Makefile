@@ -1,3 +1,6 @@
+include .env
+export
+
 dev:
 	pnpm watch & gow -e=go,mod,html run .
 
