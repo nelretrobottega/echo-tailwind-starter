@@ -1,6 +1,6 @@
-CREATE DATABASE le_donne;
+CREATE DATABASE example;
 
-\c le_donne;
+\c example;
 
 CREATE TABLE users (
   id         BIGSERIAL PRIMARY KEY,

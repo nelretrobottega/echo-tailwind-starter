@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/labstack/echo/v4"
-	"github.com/nelretrobottega/le-donne/internal"
+	"github.com/nelretrobottega/echo-tailwind-starter/internal"
 )
 
 type handler struct {

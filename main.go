@@ -10,8 +10,8 @@ import (
 
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/labstack/echo/v4"
-	"github.com/nelretrobottega/le-donne/internal/product"
-	"github.com/nelretrobottega/le-donne/registry"
+	"github.com/nelretrobottega/echo-tailwind-starter/internal/product"
+	"github.com/nelretrobottega/echo-tailwind-starter/registry"
 	"golang.org/x/net/http2"
 )
 
@@ -33,7 +33,10 @@ func main() {
 
 	e.Static("/static", "static")
 
-	e.GET("/", product.Container(pool).Index())
+	{
+		container := product.Container(pool)
+		e.GET("/", container.Index())
+	}
 
 	s := &http2.Server{
 		MaxConcurrentStreams: 250,

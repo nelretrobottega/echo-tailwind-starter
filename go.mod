@@ -1,4 +1,4 @@
-module github.com/nelretrobottega/le-donne
+module github.com/nelretrobottega/echo-tailwind-starter
 
 go 1.22.3
 

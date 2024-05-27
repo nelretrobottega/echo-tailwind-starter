@@ -4,9 +4,9 @@ import (
 	"sync"
 
 	"github.com/jackc/pgx/v5/pgxpool"
-	"github.com/nelretrobottega/le-donne/internal"
-	"github.com/nelretrobottega/le-donne/internal/product/repository"
-	handler "github.com/nelretrobottega/le-donne/internal/product/web"
+	"github.com/nelretrobottega/echo-tailwind-starter/internal"
+	"github.com/nelretrobottega/echo-tailwind-starter/internal/product/repository"
+	handler "github.com/nelretrobottega/echo-tailwind-starter/internal/product/web"
 )
 
 var (
